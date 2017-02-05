@@ -1,0 +1,21 @@
+{
+  "name": "brisum/lib-translit",
+  "description": "Translit tool",
+  "keywords": [
+    "translit"
+  ],
+  "homepage": "https://github.com/brisum/php-lib-translit",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Oleksandr Manchenko",
+      "email": "omanchenko@brisum.com",
+      "homepage": "http://brisum.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Brisum\\Lib\\Translit\\": "src/"
+    }
+  }
+}
