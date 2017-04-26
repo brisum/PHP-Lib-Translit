@@ -1,8 +1,11 @@
 <?php
 
-namespace Brisum\Lib\Translit;
+namespace Brisum\Lib;
 
 class Translit {
+    /**
+     * @var array
+     */
     protected static $gost = array(
         "Є"=>"EH","І"=>"I","і"=>"i","№"=>"#","є"=>"eh",
         "А"=>"A","Б"=>"B","В"=>"V","Г"=>"G","Д"=>"D",
@@ -21,6 +24,10 @@ class Translit {
         "ы"=>"y","ь"=>"","э"=>"eh","ю"=>"yu","я"=>"ya",
         "—"=>"-","«"=>"","»"=>"","…"=>""
     );
+
+    /**
+     * @var array
+     */
     protected static $iso = array(
         "Є"=>"YE","І"=>"I","Ѓ"=>"G","і"=>"i","№"=>"#","є"=>"ye","ѓ"=>"g",
         "А"=>"A","Б"=>"B","В"=>"V","Г"=>"G","Д"=>"D",
@@ -40,11 +47,17 @@ class Translit {
         "—"=>"-","«"=>"","»"=>"","…"=>""
     );
 
+    /**
+     * @param $str
+     * @param string $type
+     * @return string
+     */
     public function exec($str, $type = 'iso') {
         switch ( $type ) {
             case 'gost':
                 $str = strtr($str, self::$gost);
                 break;
+            case 'iso':
             default:
                 $str = strtr($str, self::$iso);
         }
